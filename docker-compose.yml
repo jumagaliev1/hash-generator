@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  redis-hash:
+    image: redis:alpine
+    ports:
+      - "6382:6379"
