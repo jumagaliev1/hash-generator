@@ -70,11 +70,6 @@ func (s *HashService) GenerateAll(ctx context.Context) error {
 			}
 		}
 	}
-	//for i7 := 0; i7 < 64; i7++ {
-	//	for i8 := 0; i8 < 64; i8++ {
-	//		go s.generateString(context.Background(), 0, 0, 0, 0, 0)
-	//	}
-	//}
 
 	return nil
 }
