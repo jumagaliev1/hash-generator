@@ -1,4 +1,7 @@
 port: 8080
 
 redis:
-  uri: localhost:6382
+  uri: redis-hash:6379
+
+postgres:
+  uri: "postgres://postgres:postgres@db:5432/postgres"
