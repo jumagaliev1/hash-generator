@@ -1,7 +1,30 @@
 version: '3.8'
 
 services:
+  app:
+    build: ./
+    command: ./app
+    ports:
+      - 50051:50051
+    depends_on:
+      - db
+    networks:
+      - jibersoz_backend
+  db:
+    restart: always
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    ports:
+      - 5440:5432
   redis-hash:
     image: redis:alpine
     ports:
       - "6382:6379"
+    networks:
+      - jibersoz_backend
+networks:
+  jibersoz_backend:
+    external: true
